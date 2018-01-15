@@ -1,0 +1,43 @@
+{
+  "name": "v-thread",
+  "version": "0.0.0",
+  "description": "Web workers made painless",
+  "main": "build/index.js",
+  "typings": "build/typings/index.d.ts",
+  "scripts": {
+    "prepublishOnly": "npm run release",
+    "release": "npm run build & npm run docs",
+    "build": "tsc",
+    "watch": "tsc -w",
+    "docs": "npm run _generate-docs & npm run _publish-docs",
+    "_generate-docs": "typedoc --mode file --excludePrivate --excludeExternals --excludeNotExported --out docs/ src/",
+    "_publish-docs": "gh-pages -d docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chipto/v-thread.git"
+  },
+  "keywords": [
+    "web",
+    "worker",
+    "thread",
+    "async",
+    "wrapper"
+  ],
+  "author": "Neek Sandhu <neek.sandhu@chipto.io>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/chipto/v-thread/issues"
+  },
+  "homepage": "https://github.com/chipto/v-thread#readme",
+  "dependencies": {
+    "error-stack-parser": "^2.0.1",
+    "serialize-error": "^2.1.0"
+  },
+  "devDependencies": {
+    "@types/error-stack-parser": "^2.0.0",
+    "gh-pages": "^1.1.0",
+    "typedoc": "^0.9.0",
+    "typescript": "^2.6.2"
+  }
+}
