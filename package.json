@@ -35,7 +35,6 @@
     "serialize-error": "^2.1.0"
   },
   "devDependencies": {
-    "@types/error-stack-parser": "^2.0.0",
     "gh-pages": "^1.1.0",
     "typedoc": "^0.9.0",
     "typescript": "^2.6.2"
