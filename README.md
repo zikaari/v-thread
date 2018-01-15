@@ -18,6 +18,14 @@ Let's say you're making `WebGL` app or similar. You might wanna do heavy computa
 
 `v-thread` can really ease the process.
 
+*Install*
+
+```bash
+$ npm i v-thread
+```
+
+*Light it up*
+
 ```javascript
 // main.js
 
