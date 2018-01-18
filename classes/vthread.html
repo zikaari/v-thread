@@ -123,7 +123,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/chipto/v-thread/blob/72643e8/src/MainThread.ts#L134">MainThread.ts:134</a></li>
+									<li>Defined in <a href="https://github.com/chipto/v-thread/blob/281ef7c/src/MainThread.ts#L145">MainThread.ts:145</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -146,7 +146,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/chipto/v-thread/blob/72643e8/src/MainThread.ts#L144">MainThread.ts:144</a></li>
+									<li>Defined in <a href="https://github.com/chipto/v-thread/blob/281ef7c/src/MainThread.ts#L155">MainThread.ts:155</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -170,7 +170,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/chipto/v-thread/blob/72643e8/src/MainThread.ts#L114">MainThread.ts:114</a></li>
+									<li>Defined in <a href="https://github.com/chipto/v-thread/blob/281ef7c/src/MainThread.ts#L125">MainThread.ts:125</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -205,13 +205,13 @@
 					<a name="start" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagStatic">Static</span> start</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-static">
-						<li class="tsd-signature tsd-kind-icon">start&lt;K&gt;<span class="tsd-signature-symbol">(</span>scriptUrl<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, workerInitOptions<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span>, host<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="vthread.html" class="tsd-signature-type">VThread</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">K</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">start&lt;K&gt;<span class="tsd-signature-symbol">(</span>scriptUrl<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, workerInitOptions<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span>, host<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="vthread.html" class="tsd-signature-type">VThread</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">K</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/chipto/v-thread/blob/72643e8/src/MainThread.ts#L38">MainThread.ts:38</a></li>
+									<li>Defined in <a href="https://github.com/chipto/v-thread/blob/281ef7c/src/MainThread.ts#L49">MainThread.ts:49</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -240,10 +240,31 @@
 									</div>
 								</li>
 								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> host: <span class="tsd-signature-type">any</span></h5>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> host: <span class="tsd-signature-type">function</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>Define an object with some methods in it, and those methods can be called by thread on the other side</p>
+										<p>An object with some methods in it, and those methods can be called by thread on the other side (can be a function as well that returns the said object)</p>
 									</div>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter-siganture">
+											<ul class="tsd-signatures tsd-kind-type-literal tsd-is-not-exported">
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>thread<span class="tsd-signature-symbol">: </span><a href="vthread.html" class="tsd-signature-type">VThread</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">K</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/ihostlike.html" class="tsd-signature-type">IHostLike</a><span class="tsd-signature-symbol"> | </span><a href="../interfaces/ihostlike.html" class="tsd-signature-type">IHostLike</a></li>
+											</ul>
+											<ul class="tsd-descriptions">
+												<li class="tsd-description">
+													<h4 class="tsd-parameters-title">Parameters</h4>
+													<ul class="tsd-parameters">
+														<li>
+															<h5>thread: <a href="vthread.html" class="tsd-signature-type">VThread</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">K</span><span class="tsd-signature-symbol">&gt;</span></h5>
+														</li>
+													</ul>
+													<h4 class="tsd-returns-title">Returns <a href="../interfaces/ihostlike.html" class="tsd-signature-type">IHostLike</a>
+														<span class="tsd-signature-symbol"> | </span>
+														<a href="../interfaces/ihostlike.html" class="tsd-signature-type">IHostLike</a>
+													</h4>
+												</li>
+											</ul>
+										</li>
+									</ul>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="vthread.html" class="tsd-signature-type">VThread</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">K</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -260,7 +281,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/chipto/v-thread/blob/72643e8/src/MainThread.ts#L54">MainThread.ts:54</a></li>
+									<li>Defined in <a href="https://github.com/chipto/v-thread/blob/281ef7c/src/MainThread.ts#L65">MainThread.ts:65</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -344,6 +365,9 @@
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="../interfaces/idisposable.html" class="tsd-kind-icon">IDisposable</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="../interfaces/ihostlike.html" class="tsd-kind-icon">IHost<wbr>Like</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="../interfaces/ivthreadworkerhost.html" class="tsd-kind-icon">IVThread<wbr>Worker<wbr>Host</a>
