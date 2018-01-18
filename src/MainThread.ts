@@ -82,10 +82,10 @@ export class VThread<T extends object> {
         this.scriptUrl = scriptUrl;
         this.workerState = WorkerState.Loading;
         this.workerInitOptions = initOptions;
-        this.host = host;
         this.emitter = new EventManager();
         this.pendingTransactionCount = 0;
         this.generateProxy();
+        this.host = (typeof host === 'function') ? host(this) : host;
         if (typeof VThread.onBeforeSpawnCallback === 'function') {
             const maybeWorker = VThread.onBeforeSpawnCallback(scriptUrl);
             if (maybeWorker instanceof Worker) {
