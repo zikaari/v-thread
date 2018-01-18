@@ -12,6 +12,17 @@ enum WorkerState {
 }
 
 /**
+ * An object with methods defined in it. Those methods can then be called
+ * by threadable running in Worker thread on the other side.
+ *
+ * When other side (Worker) does call the method it'll get a Promise that'll
+ * eventually resolve (or reject) to whatever actual return value (or error) is
+ */
+export interface IHostLike {
+    [fn: string]: any;
+}
+
+/**
  * `WebWorker`(s) on steroids
  *
  * Hides the pain of `postMessage` and `onmessage` internally and gives you neat goodies.
@@ -33,9 +44,9 @@ export class VThread<T extends object> {
      *
      * @param scriptUrl Same as what `Worker` constructor expects to be passed
      * @param workerInitOptions Any data that should be passed to other side when thread is created
-     * @param host Define an object with some methods in it, and those methods can be called by thread on the other side
+     * @param host An object with some methods in it, and those methods can be called by thread on the other side (can be a function as well that returns the said object)
      */
-    public static start<K extends object>(scriptUrl: string, workerInitOptions?, host?: any) {
+    public static start<K extends object>(scriptUrl: string, workerInitOptions?, host?: (thread: VThread<K>) => IHostLike | IHostLike) {
         VThread.preCheck();
         return new VThread<K>(scriptUrl, workerInitOptions, host);
     }
