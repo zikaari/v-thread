@@ -46,7 +46,7 @@ export class VThread<T extends object> {
      * @param workerInitOptions Any data that should be passed to other side when thread is created
      * @param host An object with some methods in it, and those methods can be called by thread on the other side (can be a function as well that returns the said object)
      */
-    public static start<K extends object>(scriptUrl: string, workerInitOptions?, host?: (thread: VThread<K>) => IHostLike | IHostLike) {
+    public static start<K extends object>(scriptUrl: string, workerInitOptions?, host?: ((thread: VThread<K>) => IHostLike) | IHostLike) {
         VThread.preCheck();
         return new VThread<K>(scriptUrl, workerInitOptions, host);
     }
