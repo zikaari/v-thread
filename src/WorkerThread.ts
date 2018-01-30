@@ -9,7 +9,7 @@ import { wiredTransferables } from './VTransferable';
  *
  * For reference, first argument is any data passed by master in main/window context when `VThread#start` is called there
  */
-export interface IVThreadWorkerHost {
+export interface IVThreadWorkerRuntime {
     /**
      * Master may optionally pass an object as third argument to VThread#start when spawning a Worker
      *
@@ -38,9 +38,9 @@ export interface IVThreadWorkerHost {
 
 /**
  * @param options Any value master may pass upon creation of this Threadable
- * @param host For advanced usage, IVThreadWorkerHost has bunch of stuff Threadble may find useful
+ * @param host For advanced usage, IVThreadWorkerRuntime has bunch of stuff Threadble may find useful
  */
-export type VThreadWorkerProvider = (options: any, host: IVThreadWorkerHost) => IVThreadableContainer;
+export type VThreadWorkerProvider = (options: any, host: IVThreadWorkerRuntime) => IVThreadableContainer;
 
 /**
  * Any methods that need to be accessible in main thread (Master/Window context) go here
@@ -106,7 +106,7 @@ export class VThreadable {
     private static eventManager = new EventManager();
     // Will be Proxy object if isParentAvailable passed in init phase
     private static parentProxy: any = null;
-    private static VThreadHost: IVThreadWorkerHost = {
+    private static VThreadHost: IVThreadWorkerRuntime = {
         getMasterProxy: () => VThreadable.parentProxy,
         onWillTerminate: (cb) => VThreadable.eventManager.add('will-terminate', cb),
     };
