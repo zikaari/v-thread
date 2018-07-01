@@ -15,7 +15,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/chipto/v-thread.git"
+    "url": "git+https://github.com/NeekSandhu/v-thread.git"
   },
   "keywords": [
     "web",
@@ -24,12 +24,12 @@
     "async",
     "wrapper"
   ],
-  "author": "Neek Sandhu <neek.sandhu@chipto.io>",
+  "author": "Neek Sandhu <neek.sandhu@outlook.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/chipto/v-thread/issues"
+    "url": "https://github.com/NeekSandhu/v-thread/issues"
   },
-  "homepage": "https://github.com/chipto/v-thread#readme",
+  "homepage": "https://github.com/NeekSandhu/v-thread#readme",
   "dependencies": {
     "error-stack-parser": "^2.0.1",
     "serialize-error": "^2.1.0"
