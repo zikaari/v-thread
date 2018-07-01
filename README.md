@@ -86,7 +86,7 @@ Power of multi-threading, without the pain.
 
 > Edge on desktops requires version 12 or above
 
-Head over to [documentation](https://chipto.github.io/v-thread) for more info on whats available.
+Head over to [documentation](https://neeksandhu.github.io/v-thread) for more info on whats available.
 
 ## Related
 
