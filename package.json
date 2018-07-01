@@ -1,6 +1,6 @@
 {
   "name": "v-thread",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Web workers made painless",
   "main": "build/index.js",
   "typings": "build/typings/index.d.ts",
