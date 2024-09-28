@@ -214,6 +214,8 @@ export class VThread<T extends object> {
         return new Promise(async (resolve: (value: MessageEvent) => void) => {
             const channel = new MessageChannel();
             channel.port1.onmessage = (e: MessageEvent) => {
+                channel.port1.close()
+                channel.port2.close()
                 resolve(e);
                 this.pendingTransactionCount--;
                 this.emitter.dispatch('transaction-complete');
@@ -280,6 +282,8 @@ export class VThread<T extends object> {
 
             const channel = new MessageChannel();
             channel.port1.onmessage = (e) => {
+                channel.port1.close();
+                channel.port2.close();
                 if (this.workerState !== WorkerState.Killed
                     && this.workerState < WorkerState.Listening) {
                     this.workerState = WorkerState.Listening;

@@ -10,6 +10,7 @@ function processMessage(event: MessageEvent, localErrForStack: Error) {
         let hydratedErr;
         if (localErrForStack && err.stackFrames) {
             const ctr = typeof self !== 'undefined' && self[err.name] ? self[err.name] : Error;
+            // @ts-ignore
             hydratedErr = new ctr(err.message);
             Object.defineProperties(hydratedErr, (Object as any).getOwnPropertyDescriptors(err));
             hydratedErr.stack = [...err.stackFrames, ...localStack].map((frame) => frame.source).join('\n');

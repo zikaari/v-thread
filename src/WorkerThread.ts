@@ -173,6 +173,8 @@ export class VThreadable {
                                 });
                                 const channel = new MessageChannel();
                                 channel.port1.onmessage = (e) => {
+                                    channel.port1.close();
+                                    channel.port2.close();
                                     resolve(processMessage(e, localErrForStack));
                                 };
 
